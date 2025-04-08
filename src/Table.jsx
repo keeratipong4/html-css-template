@@ -9,20 +9,20 @@ const Table = ({ header, data, columns }) => {
   const totalNAV = data.reduce((sum, row) => sum + (row.NAV || 0), 0);
 
   return (
-    <table className="table-auto w-full border-2 border-gray-800 rounded-lg shadow-lg">
+    <table className="table-auto w-full border-3 border-gray-800 rounded-lg shadow-lg">
       <thead>
         <tr>
           <th
             colSpan={columns.length}
-            className="uppercase text-white px-4 py-2 text-left bg-yellow-700">
-            {header}
+            className="uppercase text-white px-4 py-2 text-left bg-[#887650] font-semibold">
+            <span className="text-2xl">{header}</span>
           </th>
         </tr>
         <tr>
           {columns.map((column, index) => (
             <th
               key={index}
-              className="capitalize px-4 py-2 text-left bg-yellow-600">
+              className="capitalize px-4 py-2 text-left bg-[#AF9D76]">
               {column.header}
             </th>
           ))}
@@ -30,7 +30,9 @@ const Table = ({ header, data, columns }) => {
       </thead>
       <tbody>
         {data.map((row, rowIndex) => (
-          <tr key={rowIndex} className="even:bg-gray-50">
+          <tr
+            key={rowIndex}
+            className="even:bg-gray-50 border-2 border-[#D0C4AE]">
             {columns.map((column, colIndex) => (
               <td key={colIndex} className="px-4 py-2 text-right">
                 {typeof row[column.accessor] === "number"
@@ -42,7 +44,7 @@ const Table = ({ header, data, columns }) => {
         ))}
       </tbody>
       <tfoot>
-        <tr className="px-4 py-2 bg-yellow-600 font-semibold">
+        <tr className="px-4 py-2 bg-[#DAD3C0] font-semibold">
           <td></td>
           <td></td>
           <td></td>
