@@ -135,11 +135,6 @@ function App() {
       <div>
         <h1 className="text-right">Unit baht</h1>
         <TableA header="Investment Report as of 31 August 2024" data={data1} />
-        {/* <Table
-          header="Investment Report as of 31 August 2024"
-          data={portfolioReport}
-          columns={columns}
-        /> */}
       </div>
       <Table
         header="PortFolio Holding report"
